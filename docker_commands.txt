@@ -1,0 +1,32 @@
+| **Command**                                                 | **Purpose / Description**                    | **Example**                                                        |
+| ----------------------------------------------------------- | -------------------------------------------- | ------------------------------------------------------------------ |
+| `docker --version`                                          | Check Docker version installed               | `docker --version`                                                 |
+| `docker info`                                               | Show system-wide Docker info                 | `docker info`                                                      |
+| `docker images` or `docker image ls`                        | List all Docker images                       | `docker images`                                                    |
+| `docker pull <image>`                                       | Pull an image from Docker Hub                | `docker pull nginx` <br> `docker pull nginx:1.25.2`                |
+| `docker build -t <name>:<tag> <path>`                       | Build an image from Dockerfile               | `docker build -t myapp:latest .`                                   |
+| `docker rmi <image>`                                        | Remove an image                              | `docker rmi myapp:latest`                                          |
+| `docker run --name <name> -p <host>:<container> -d <image>` | Run a container                              | `docker run --name mynginx -p 8080:80 -d nginx`                    |
+| `docker ps`                                                 | List running containers                      | `docker ps`                                                        |
+| `docker ps -a`                                              | List all containers, including stopped       | `docker ps -a`                                                     |
+| `docker stop <container>`                                   | Stop a running container                     | `docker stop mynginx`                                              |
+| `docker start <container>`                                  | Start a stopped container                    | `docker start mynginx`                                             |
+| `docker rm <container>`                                     | Remove a container                           | `docker rm mynginx`                                                |
+| `docker logs <container>`                                   | View container logs                          | `docker logs mynginx`                                              |
+| `docker exec -it <container> bash`                          | Open shell inside a running container        | `docker exec -it mynginx bash`                                     |
+| `docker volume create <volume>`                             | Create a Docker volume                       | `docker volume create myvolume`                                    |
+| `docker volume ls`                                          | List all volumes                             | `docker volume ls`                                                 |
+| `docker run -v <volume>:<container_path>`                   | Mount a volume in a container                | `docker run -d -p 8080:80 -v myvolume:/usr/share/nginx/html nginx` |
+| `docker volume rm <volume>`                                 | Remove a volume                              | `docker volume rm myvolume`                                        |
+| `docker network ls`                                         | List Docker networks                         | `docker network ls`                                                |
+| `docker network create <network>`                           | Create a new network                         | `docker network create mynetwork`                                  |
+| `docker run --network <network> <image>`                    | Run container on a network                   | `docker run -d --name myapp --network mynetwork nginx`             |
+| `docker network connect <network> <container>`              | Connect a container to an existing network   | `docker network connect mynetwork mycontainer`                     |
+| `docker-compose up -d`                                      | Start services defined in docker-compose.yml | `docker-compose up -d`                                             |
+| `docker-compose down`                                       | Stop and remove services                     | `docker-compose down`                                              |
+| `docker-compose up -d --build`                              | Rebuild and start services                   | `docker-compose up -d --build`                                     |
+| `docker-compose logs -f`                                    | Follow logs of all services                  | `docker-compose logs -f`                                           |
+| `docker container prune`                                    | Remove all stopped containers                | `docker container prune`                                           |
+| `docker image prune -a`                                     | Remove all unused images                     | `docker image prune -a`                                            |
+| `docker network prune`                                      | Remove all unused networks                   | `docker network prune`                                             |
+| `docker volume prune`                                       | Remove all unused volumes                    | `docker volume prune`                                              |

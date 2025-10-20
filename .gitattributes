@@ -1,0 +1,5 @@
+# Set default behavior to automatically normalize line endings
+* text=auto
+
+# Force CRLF for IDE files
+.idea/* text eol=crlf
